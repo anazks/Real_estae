@@ -117,9 +117,9 @@
               <input
                 type="text"
                 class="form-control px-4"
-                placeholder="Your ZIP code or City. e.g. New York"
+                placeholder="Easiest way to find your dream Property"
               />
-              <button type="submit" class="btn btn-primary">Search</button>
+              <button type="submit" class="btn btn-primary">Explore</button>
             </form>
           </div>
         </div>
@@ -170,11 +170,11 @@
                       <div class="specs d-flex mb-4">
                         <span class="d-block d-flex align-items-center me-3">
                           <span class="icon-bed me-2"></span>
-                          <span class="caption">2 beds</span>
+                          {{!-- <span class="caption">2 beds</span> --}}
                         </span>
                         <span class="d-block d-flex align-items-center">
                           <span class="icon-bath me-2"></span>
-                          <span class="caption">2 baths</span>
+                          {{!-- <span class="caption">2 baths</span> --}}
                         </span>
                       </div>
 
@@ -295,7 +295,7 @@
         <div class="row mb-5 align-items-center">
           <div class="col-md-6">
             <h2 class="font-weight-bold heading text-primary mb-4 mb-md-0">
-              Customer Says
+              Lands For Sale
             </h2>
           </div>
           <div class="col-md-6 text-md-end">
@@ -312,34 +312,33 @@
         </div>
         <div class="testimonial-slider-wrap">
           <div class="testimonial-slider">
+            {{#each land}}
             <div class="item">
               <div class="testimonial">
                 <img
-                  src="images/person_1-min.jpg"
+                  src="/images/Property/{{_id}}.jpg"
                   alt="Image"
-                  class="img-fluid rounded-circle w-25 mb-4"
+                  class="img-fluid  w-55 mb-4"
+                  style="height:100%; width:100%"
                 />
                 <div class="rate">
+                  {{!-- <span class="icon-star text-warning"></span>
                   <span class="icon-star text-warning"></span>
                   <span class="icon-star text-warning"></span>
                   <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
+                  <span class="icon-star text-warning"></span> --}}
                 </div>
-                <h3 class="h5 text-primary mb-4">James Smith</h3>
+                <h3 class="h5 text-primary mb-4">{{place}}</h3>
                 <blockquote>
                   <p>
-                    &ldquo;Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia, there live the blind
-                    texts. Separated they live in Bookmarksgrove right at the
-                    coast of the Semantics, a large language ocean.&rdquo;
+                    &ldquo;.{{discription}}&rdquo;
                   </p>
                 </blockquote>
-                <p class="text-black-50">Designer, Co-founder</p>
+                <p class="text-black-50">{{date}}</p>
               </div>
             </div>
-
-            <div class="item">
+          {{/each}}
+            {{!-- <div class="item">
               <div class="testimonial">
                 <img
                   src="images/person_2-min.jpg"
@@ -364,9 +363,9 @@
                 </blockquote>
                 <p class="text-black-50">Designer, Co-founder</p>
               </div>
-            </div>
+            </div> --}}
 
-            <div class="item">
+            {{!-- <div class="item">
               <div class="testimonial">
                 <img
                   src="images/person_3-min.jpg"
@@ -391,9 +390,9 @@
                 </blockquote>
                 <p class="text-black-50">Designer, Co-founder</p>
               </div>
-            </div>
+            </div> --}}
 
-            <div class="item">
+            {{!-- <div class="item">
               <div class="testimonial">
                 <img
                   src="images/person_4-min.jpg"
@@ -418,7 +417,7 @@
                 </blockquote>
                 <p class="text-black-50">Designer, Co-founder</p>
               </div>
-            </div>
+            </div> --}}
           </div>
         </div>
       </div>
@@ -432,8 +431,7 @@
               Let's find home that's perfect for you
             </h2>
             <p class="text-black-50">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-              enim pariatur similique debitis vel nisi qui reprehenderit.
+             
             </p>
           </div>
         </div>
@@ -451,8 +449,7 @@
               <div class="feature-text">
                 <h3 class="heading">2M Properties</h3>
                 <p class="text-black-50">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Nostrum iste.
+
                 </p>
               </div>
             </div>
@@ -464,8 +461,7 @@
               <div class="feature-text">
                 <h3 class="heading">Top Rated Agents</h3>
                 <p class="text-black-50">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Nostrum iste.
+                 
                 </p>
               </div>
             </div>
@@ -477,8 +473,7 @@
               <div class="feature-text">
                 <h3 class="heading">Legit Properties</h3>
                 <p class="text-black-50">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Nostrum iste.
+                 
                 </p>
               </div>
             </div>
@@ -546,7 +541,7 @@
               href="#"
               target="_blank"
               class="btn btn-primary text-white py-3 px-4"
-              >Apply for Real Estate agent</a
+              >Contact Us</a
             >
           </p>
         </div>

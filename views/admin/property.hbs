@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel='stylesheet' href='/stylesheets/adminHOme.css' />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+      .navBar li{
+          display: inline;
+          padding: 10px;
+      }
+      .property{
+        width: 90%;
+        height: 200px;
+        border: 1px solid green;
+        margin: auto;
+        margin-top: 20px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        display: flex;
+      }
+      .box{
+        width: 35%;
+        height: 100%;
+        background-color: black;
+      }
+      .content{
+        width: 60%;
+      }
+      .content p{
+        font-size: 10px;
+        padding: 5px;
+      }
+      .btns{
+        display: flex;
+        gap: 5px;
+        padding: 5px;
+      }
+    </style>
+</head>
+<body>
+    <div class="navBar">
+        <ul>
+            <li> <i class="w3-jumbo  fa fa-home"></i>KOCHI REAL-ESTATE</li>
+           <a href="/admin/"> <li>My Properties</li></a>
+
+        </ul>
+    </div>
+<body>
+   {{#each Property}}
+            <div class="property">
+                <div class="box">
+                    <img style="width: 100%;height:100%" src="/images/Property/{{_id}}.jpg" alt="">
+                </div>
+                <div class="content">
+                    <p class="description">{{discription}}</p>
+                    <p>{{place}}, Rs.{{price}}</p>
+                    <p>{{type}}</p>
+                    <div class="btns">
+                        <a href="" class="btn btn-danger">Delete</a>
+                    <a href="/admin/getUpdate/{{_id}}" class="btn btn-success">Update</a>
+                    <a href="" class="btn btn-info">sold</a>
+                    </div>
+                </div>
+            </div>
+  {{/each}}
+</body>
+</html>

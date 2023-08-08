@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,30 +10,43 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel='stylesheet' href='/stylesheets/adminHOme.css' />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <title>Document</title>
     <style>
-      .navBar li{
+         .navBar li{
           display: inline;
           padding: 10px;
       }
+        .login-form{
+            width: 90%;
+            height: 300px;
+            margin: auto;
+            margin-top: 50px;
+            border: 1px solid black;
+            padding: 10px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        .login-form input{
+            width: 100%;
+            height: 40px;
+            margin-top: 10px;
+            border: .5px solid greenyellow;
+        }
     </style>
 </head>
-<body>
-    <div class="navBar">
+ <div class="navBar">
         <ul>
             <li> <i class="w3-jumbo  fa fa-home"></i>KOCHI REAL-ESTATE</li>
-           <a href="/admin/get-property"> <li>My Properties</li></a>
+           <a href="/admin/"> <li>My Properties</li></a>
 
         </ul>
     </div>
-     <div class="login-page">
-  <div class="form">
-
-    </form>
-    <form class="login-form" action="/admin/add-Property" method="post" enctype="multipart/form-data">
-      <input type="text" name="price" placeholder="Price"/>
-      <input type="text" name="discription" placeholder="Description"/>
-       <input type="text" name="place" placeholder="Place"/>
+<body>
+    <form class="login-form" action="/admin/update-Property" method="post" enctype="multipart/form-data">
+      <input type="text" name="price" placeholder="Price" value="{{property.price}}"/>
+      <input type="text" name="discription" placeholder="Description" value="{{property.discription}}"/>
+       <input type="text" name="place" placeholder="Place" value="{{property.place}}"/>
+       <input type="hidden" name="_id" value="{{property._id}}">
             <select name="type" id="" class="select">
                 <option value="Land">Land</option>
                  <option value="Flat">Flat</option>
@@ -42,13 +54,7 @@
                  <option value="Property">Property</option>
             </select>
             <input type="file" name="image" placeholder="upload image" style="margin-top:10px">
-        <input type="submit" value="Add" style="background-color: #14cd1a;margin-top:10px">
+        <input type="submit" value="Upadte" style="background-color: #14cd1a;margin-top:10px">
     </form>
-  </div>
-</div>
-</div>
-
-
-</div>
 </body>
 </html>
